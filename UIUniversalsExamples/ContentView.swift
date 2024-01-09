@@ -50,7 +50,7 @@ struct ContentView: View {
         }
     }
     
-    @State var activePage: Page = .buttons
+    @State var activePage: Page = .viewModifiers
     
 //    MARK: Body
     var body: some View {
@@ -265,12 +265,71 @@ struct ButtonsPage: View {
     }
 }
 
+//MARK: ViewModifiersView
 struct ViewModifiersView: View {
     
+    @ViewBuilder
+    private func makeDisplay<C: View>(_ title: String, view: () -> C) -> some View {
+        VStack {
+            view()
+            UniversalText( title, size: Constants.UIDefaultTextSize, font: ProvidedFont.renoMono, textAlignment: .center )
+        }
+    }
     
     var body: some View {
         
-        
+        VStack(alignment: .leading) {
+            
+            UniversalText( "UniversalText",
+                           size: Constants.UISubHeaderTextSize,
+                           font: ProvidedFont.madeTommyRegular)
+            .padding(.bottom, 7)
+            
+            ScrollView(.horizontal) {
+                HStack(spacing: 20) {
+                    makeDisplay("default") {
+                        UniversalText( "Hello world!", size: Constants.UISubHeaderTextSize )
+                    }
+                    
+                    makeDisplay("custom styling") {
+                        UniversalText("Howdy \nworld!",
+                                      size: Constants.UIDefaultTextSize,
+                                      font: ProvidedFont.syneHeavy,
+                                      case: .uppercase)
+                    }
+                    
+                    makeDisplay("custom wrapping + scaling") {
+                        UniversalText("hola world!",
+                                      size: Constants.UIHeaderTextSize,
+                                      font: ProvidedFont.renoMono,
+                                      wrap: false,
+                                      fixed: true,
+                                      scale: true)
+                    }
+                    
+                    makeDisplay("custom line spacing") {
+                        UniversalText("Bonjour \nworld",
+                                      size: Constants.UISubHeaderTextSize,
+                                      font: ProvidedFont.madeTommyRegular,
+                                      case: .uppercase,
+                                      wrap: true,
+                                      textAlignment: .center,
+                                      lineSpacing: -15)
+                    }
+                }
+                .padding(.bottom)
+            }
+            
+            Divider()
+            
+            Spacer()
+            
+            HStack {
+                Spacer()
+            }
+            
+        }
+        .padding(.horizontal)
         
     }
 }
