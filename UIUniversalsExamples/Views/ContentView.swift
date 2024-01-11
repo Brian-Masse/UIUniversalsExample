@@ -26,7 +26,7 @@ struct ContentView: View {
         }
     }
     
-    @State var activePage: Page = .utilities
+    @State var activePage: Page = .viewModifiers
     
 //    MARK: Body
     var body: some View {
@@ -64,68 +64,6 @@ struct ContentView: View {
         }
         .universalTextStyle()
         .universalImageBackground( universalImage("test") )
-        
-        
-//        let data = makeRandomData()
-//        
-//        ScrollReader($scrollPoint) {
-//            VStack {
-//                HStack {
-//                    UniversalText( "Hello World!",
-//                                   size: Constants.UISubHeaderTextSize,
-//                                   font: ProvidedFont.syneHeavy )
-//                    
-//                    Image(systemName: "globe.americas")
-//                    
-//                    Spacer()
-//                }
-//                .rectangularBackground(style: .transparent, shadow: true)
-//                .padding(.bottom)
-//                
-//                HStack {
-//                    Text("manual RectangularBackground")
-        //                    Image(systemName: "globe.europe.africa")
-//                }
-//                .padding()
-//                .background(
-//                    Colors.secondaryLight
-//                        .cornerRadius(50, corners: [ .topRight, .bottomLeft ])
-//                )
-//                .padding(.bottom)
-//                
-//                Divider()
-//                
-////                WrappedHStack(collection: data, spacing: 5) { obj in
-////                    UniversalText( obj.data, size: Constants.UIDefaultTextSize, font: ProvidedFont.renoMono )
-////                        .rectangularBackground(7, style: .secondary, stroke: true)
-////                }
-////                Divider()
-//                
-//                Spacer()
-//                
-//                UniversalText( "\(scrollPoint.y)", size: Constants.UIDefaultTextSize, font: ProvidedFont.renoMono )
-//                
-//                
-                
-//                
-//                LargeRoundedButton("hello",
-//                                   to: "complete",
-//                                   icon: "arrow.forward",
-//                                   to: "checkmark",
-//                                   wide: true,
-//                                   small: false,
-//                                   style: .transparent) { buttonToggled } action: {
-//                    buttonToggled.toggle()
-//                }
-//
-//                
-//                UnderlinedButton( "hello", condition: {true}) {}
-//                
-//            }
-//            .padding()
-//        }
-//        .universalTextStyle(reversed: false)
-//        .universalImageBackground( universalImage("test") )
     }
 }
 
