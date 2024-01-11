@@ -19,7 +19,7 @@ struct ButtonsPage: View {
     private func makeLargeTextButtonDisplay<C: View>( text: String, button: () -> C ) -> some View {
         VStack {
             button()
-            UniversalText(text, size: Constants.UIDefaultTextSize, font: ProvidedFont.renoMono, textAlignment: .center)
+            UniversalText(text, size: Constants.UIDefaultTextSize, font: FontProvider[.renoMono], textAlignment: .center)
         }
     }
     
@@ -32,7 +32,7 @@ struct ButtonsPage: View {
 //                MARK: LargeTextButton
                 UniversalText("LargeTextButton",
                               size: Constants.UISubHeaderTextSize,
-                              font: ProvidedFont.madeTommyRegular)
+                              font: FontProvider[.madeTommyRegular])
                 
                 ScrollView(.horizontal) {
                     HStack(spacing: -15) {
@@ -71,7 +71,7 @@ struct ButtonsPage: View {
 //                MARK: RoundedButton
                 UniversalText("RoundedButton",
                               size: Constants.UISubHeaderTextSize,
-                              font: ProvidedFont.madeTommyRegular)
+                              font: FontProvider[.madeTommyRegular])
                 
                 ScrollView(.horizontal) {
                     HStack() {
@@ -106,7 +106,7 @@ struct ButtonsPage: View {
 //                MARK: UnderlinedButton
                 UniversalText( "UnderlinedButton",
                                size: Constants.UISubHeaderTextSize,
-                               font: ProvidedFont.madeTommyRegular)
+                               font: FontProvider[.madeTommyRegular])
                     .padding(.bottom, 5)
                 
                 HStack {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9559B342B50911E00AF00F5 /* verona_serial-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C9559B332B50911E00AF00F5 /* verona_serial-regular.otf */; };
 		C955BD4F2B3FD0E800EF118E /* UIUniversalsExamplesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955BD4E2B3FD0E800EF118E /* UIUniversalsExamplesApp.swift */; };
 		C955BD532B3FD0E800EF118E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955BD522B3FD0E800EF118E /* ContentView.swift */; };
 		C955BD552B3FD0E900EF118E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C955BD542B3FD0E900EF118E /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C9559B332B50911E00AF00F5 /* verona_serial-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "verona_serial-regular.otf"; sourceTree = "<group>"; };
 		C955BD4B2B3FD0E800EF118E /* UIUniversalsExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIUniversalsExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C955BD4E2B3FD0E800EF118E /* UIUniversalsExamplesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUniversalsExamplesApp.swift; sourceTree = "<group>"; };
 		C955BD522B3FD0E800EF118E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9559B322B5090E400AF00F5 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C9559B332B50911E00AF00F5 /* verona_serial-regular.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		C955BD422B3FD0E800EF118E = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				C955BD4E2B3FD0E800EF118E /* UIUniversalsExamplesApp.swift */,
+				C9559B322B5090E400AF00F5 /* fonts */,
 				C9B6A1F42B4E08E10014B720 /* Views */,
 				C955BD542B3FD0E900EF118E /* Assets.xcassets */,
 				C955BD562B3FD0E900EF118E /* Info.plist */,
@@ -262,6 +273,7 @@
 			files = (
 				C955BD5A2B3FD0E900EF118E /* Preview Assets.xcassets in Resources */,
 				C955BD552B3FD0E900EF118E /* Assets.xcassets in Resources */,
+				C9559B342B50911E00AF00F5 /* verona_serial-regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

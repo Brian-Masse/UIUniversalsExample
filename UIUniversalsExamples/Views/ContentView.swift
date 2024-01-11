@@ -10,7 +10,7 @@ import UIUniversals
 
 struct ContentView: View {
     
-    init() { ProvidedFont.registerFonts() }
+    init() { FontProvider.registerFonts() }
     
     @State var scrollPoint: CGPoint = .zero
     @State var buttonToggled: Bool = false
@@ -36,7 +36,7 @@ struct ContentView: View {
             VStack {
                 UniversalText("UIUniversals Example",
                               size: Constants.UIHeaderTextSize,
-                              font: ProvidedFont.syneHeavy,
+                              font: FontProvider[.syneHeavy],
                               case: .uppercase)
                 .padding(.bottom)
                 
@@ -69,4 +69,12 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+}
+
+
+private struct Verona: UniversalFont {
+    public static var shared: UniversalFont = Verona()
+    
+    var postScriptName: String = "VeronaSerial"
+    var fontExtension: String = "otf"
 }

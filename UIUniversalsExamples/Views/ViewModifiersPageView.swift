@@ -21,7 +21,7 @@ struct ViewModifiersView: View {
     private func makeDisplay<C: View>(_ title: String, view: () -> C) -> some View {
         VStack {
             view()
-            UniversalText( title, size: Constants.UIDefaultTextSize, font: ProvidedFont.renoMono, textAlignment: .center )
+            UniversalText( title, size: Constants.UIDefaultTextSize, font: FontProvider[.renoMono], textAlignment: .center )
         }
     }
     
@@ -31,7 +31,7 @@ struct ViewModifiersView: View {
             Spacer()
             Image(systemName: "globe.americas")
             
-            UniversalText( label, size: Constants.UIDefaultTextSize, font: ProvidedFont.syneHeavy )
+            UniversalText( label, size: Constants.UIDefaultTextSize, font: FontProvider[.syneHeavy] )
             
             Image(systemName: "globe.europe.africa")
             Spacer()
@@ -45,7 +45,7 @@ struct ViewModifiersView: View {
             contentBuilder()
                 .padding(.bottom, 5)
             
-            UniversalText( title, size: Constants.UISmallTextSize, font: ProvidedFont.renoMono )
+            UniversalText( title, size: Constants.UISmallTextSize, font: FontProvider[.renoMono] )
                 .padding(.leading)
         }
         .padding(.bottom, 7)
@@ -60,9 +60,10 @@ struct ViewModifiersView: View {
             VStack(alignment: .leading) {
                 
 //                MARK: UniversalText
+                \
                 UniversalText( "UniversalText",
                                size: Constants.UISubHeaderTextSize,
-                               font: ProvidedFont.madeTommyRegular)
+                               font: FontProvider[.madeTommyRegular])
                 .padding(.bottom, 7)
                 
                 ScrollView(.horizontal) {
@@ -74,14 +75,14 @@ struct ViewModifiersView: View {
                         makeDisplay("custom styling") {
                             UniversalText("Howdy \nworld!",
                                           size: Constants.UIDefaultTextSize,
-                                          font: ProvidedFont.syneHeavy,
+                                          font: FontProvider[.syneHeavy],
                                           case: .uppercase)
                         }
                         
                         makeDisplay("custom wrapping + scaling") {
                             UniversalText("hola world!",
                                           size: Constants.UIHeaderTextSize,
-                                          font: ProvidedFont.renoMono,
+                                          font: FontProvider[.renoMono],
                                           wrap: false,
                                           fixed: true,
                                           scale: true)
@@ -90,7 +91,7 @@ struct ViewModifiersView: View {
                         makeDisplay("custom line spacing") {
                             UniversalText("Bonjour \nworld",
                                           size: Constants.UISubHeaderTextSize,
-                                          font: ProvidedFont.madeTommyRegular,
+                                          font: FontProvider[.madeTommyRegular],
                                           case: .uppercase,
                                           wrap: true,
                                           textAlignment: .center,
@@ -104,7 +105,7 @@ struct ViewModifiersView: View {
 //                MARK: ResizeableIcon
                 UniversalText("ResizeableIcon",
                               size: Constants.UISubHeaderTextSize,
-                              font: ProvidedFont.madeTommyRegular)
+                              font: FontProvider[.madeTommyRegular])
                 
                 HStack {
                     Spacer()
@@ -123,12 +124,12 @@ struct ViewModifiersView: View {
 //                MARK: ViewModifiers
                 UniversalText( "ViewModifiers",
                                size: Constants.UISubHeaderTextSize,
-                               font: ProvidedFont.madeTommyRegular)
+                               font: FontProvider[.madeTommyRegular])
                 .padding(.bottom, 7)
                 
                 UniversalText( ".rectangularBackground",
                                size: Constants.UIDefaultTextSize,
-                               font: ProvidedFont.syneHeavy)
+                               font: FontProvider[.syneHeavy])
                 
                 makeRectangularBackgroundDemonstration(title: "default") {
                     makeRectangularBackgroundContent(label: "Hello world!")
@@ -165,18 +166,18 @@ struct ViewModifiersView: View {
 //                MARK: UniversalTextStyle
                 UniversalText( ".universalTextStyle",
                                size: Constants.UIDefaultTextSize,
-                               font: ProvidedFont.syneHeavy)
+                               font: FontProvider[.syneHeavy])
                 
                 HStack {
                     UniversalText( "standard universalTextStyle keeps text black on light mode and white in dark mode",
                                    size: Constants.UISmallTextSize,
-                                   font: ProvidedFont.renoMono)
+                                   font: FontProvider[.renoMono])
                     .universalTextStyle()
                     .padding(.trailing)
                     
                     UniversalText( "reversed universalTextStyle keeps text white on light mode and black in dark mode",
                                    size: Constants.UISmallTextSize,
-                                   font: ProvidedFont.renoMono)
+                                   font: FontProvider[.renoMono])
                     .universalTextStyle(reversed: true)
                     .padding(.leading)
                 }
@@ -185,22 +186,22 @@ struct ViewModifiersView: View {
                 
                 UniversalText( ".universalStyledBackground",
                                size: Constants.UIDefaultTextSize,
-                               font: ProvidedFont.syneHeavy)
+                               font: FontProvider[.syneHeavy])
                 
                 VStack {
                     UniversalText( "universal Background switches switches between the light and dark variants of the specified color pallet.",
                                    size: Constants.UISmallTextSize,
-                                   font: ProvidedFont.renoMono)
+                                   font: FontProvider[.renoMono])
                     .universalStyledBackgrond(.secondary)
                     
                     UniversalText("custom colors",
                                   size: Constants.UISmallTextSize,
-                                  font: ProvidedFont.renoMono)
+                                  font: FontProvider[.renoMono])
                     .universalStyledBackgrond(.accent, color: Colors.yellow)
                     
                     UniversalText("custom foreground",
                                   size: Constants.UISmallTextSize,
-                                  font: ProvidedFont.renoMono)
+                                  font: FontProvider[.renoMono])
                     .universalStyledBackgrond(.accent)
                     .universalStyledBackgrond(.accent, color: Colors.yellow, onForeground: true)
                 }.padding(.horizontal)
@@ -210,14 +211,14 @@ struct ViewModifiersView: View {
 //                MARK: WrappedHStack
                 UniversalText( "WrappedHStack",
                                size: Constants.UISubHeaderTextSize,
-                               font: ProvidedFont.madeTommyRegular)
+                               font: FontProvider[.madeTommyRegular])
                 
                 
                 
                 WrappedHStack(collection: wrappedHStackData, spacing: 10) { name in
                     UniversalText(name,
                                   size: Constants.UIDefaultTextSize,
-                                  font: ProvidedFont.syneHeavy)
+                                  font: FontProvider[.syneHeavy])
                     .padding(.horizontal)
                     .rectangularBackground(10, style: .accent)
                 }
