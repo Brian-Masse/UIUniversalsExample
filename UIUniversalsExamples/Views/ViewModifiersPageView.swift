@@ -187,19 +187,24 @@ struct ViewModifiersView: View {
                                size: Constants.UIDefaultTextSize,
                                font: ProvidedFont.syneHeavy)
                 
-                UniversalText( "universal Background switches switches between the light and dark variants of the specified color pallet.",
-                               size: Constants.UISmallTextSize,
-                               font: ProvidedFont.renoMono)
-                .padding(.horizontal)
-                .universalStyledBackgrond(.secondary)
-                
-                UniversalText("custom colors",
-                              size: Constants.UISmallTextSize,
-                              font: ProvidedFont.renoMono)
-                .universalStyledBackgrond(.accent, color: Colors.yellow)
+                VStack {
+                    UniversalText( "universal Background switches switches between the light and dark variants of the specified color pallet.",
+                                   size: Constants.UISmallTextSize,
+                                   font: ProvidedFont.renoMono)
+                    .universalStyledBackgrond(.secondary)
                     
-                
-                
+                    UniversalText("custom colors",
+                                  size: Constants.UISmallTextSize,
+                                  font: ProvidedFont.renoMono)
+                    .universalStyledBackgrond(.accent, color: Colors.yellow)
+                    
+                    UniversalText("custom foreground",
+                                  size: Constants.UISmallTextSize,
+                                  font: ProvidedFont.renoMono)
+                    .universalStyledBackgrond(.accent)
+                    .universalStyledBackgrond(.accent, color: Colors.yellow, onForeground: true)
+                }.padding(.horizontal)
+
                 Divider()
                 
 //                MARK: WrappedHStack
