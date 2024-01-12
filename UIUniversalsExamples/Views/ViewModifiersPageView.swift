@@ -60,7 +60,6 @@ struct ViewModifiersView: View {
             VStack(alignment: .leading) {
                 
 //                MARK: UniversalText
-                \
                 UniversalText( "UniversalText",
                                size: Constants.UISubHeaderTextSize,
                                font: FontProvider[.madeTommyRegular])
