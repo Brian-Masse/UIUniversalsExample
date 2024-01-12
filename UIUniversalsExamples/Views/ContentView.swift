@@ -72,7 +72,7 @@ struct ContentView: View {
 }
 
 
-private struct Verona: UniversalFont {
+struct Verona: UniversalFont {
     public static var shared: UniversalFont = Verona()
     
     var postScriptName: String = "VeronaSerial"

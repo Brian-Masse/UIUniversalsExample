@@ -99,6 +99,11 @@ struct ViewModifiersView: View {
                     }
                     .padding(.bottom)
                 }
+                
+                UniversalText( "custom provided font",
+                               size: Constants.UISubHeaderTextSize,
+                               font: Verona())
+                
                 Divider()
                 
 //                MARK: ResizeableIcon
